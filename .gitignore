@@ -1,14 +1,24 @@
-logs
+# Caches
+*.pyc
+__pycache__/
+.pytest_cache/
+
+# Environment
 prefect-env
 dbt-env
-.env
+
+logs
 dbt/
 
 .DS_store
 
-# prefect artifacts
+# prefect artifacts - Need to review and remove if we need it on github
 .prefectignore
 
 *.json
 
 *.yaml
+
+# Credentials
+bigquery-service-account.json
+.env
