@@ -53,17 +53,17 @@ def generate_dbt_docs():
 
 @flow(name="dbt-transform")
 def run_dbt_transform():
-    
+    # Take the latest DTB pull from github repo
     pull_dost_github_repo()
-
+    # Run dbt transform on transformed
     run_dbt_deps()
-
+    # Generate documentation for transformed models and resources.
     generate_dbt_docs()
-
+    # Take dbt source snapshot
     run_dbt_source_snapshot_freshness()
-
+    # Run dbt run to compile all transformations
     run_dbt_run()
-
+    # Run dbt test against compiled models
     run_dbt_test()
-    
+
     return 1
